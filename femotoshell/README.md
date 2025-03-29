@@ -18,7 +18,7 @@ Femto Shell (femtoshell) is a simple command-line shell implementation written i
 ### Compilation with Makefile
 ```bash
 # Clone repository
-git clone https://github.com/alansarijr/spl01
+git clone https://github.com/alansarijr/spl01.git
 cd spl01/femtoshell
 
 # Build all
