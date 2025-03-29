@@ -19,8 +19,8 @@ Minimal implementations of essential Linux command-line utilities in C, develope
 ### Compilation with Makefile
 ```bash
 # Clone repository
-git clone https://github.com/your-repo/spl01.git
-cd spl01
+git clone https://github.com/alansarijr/spl01
+cd spl01/unix_utils
 
 # Build all utilities
 make

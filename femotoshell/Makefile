@@ -1,4 +1,4 @@
-# Makefile for SPL01 Linux Utilities
+# Makefile for SPL01 Femto Shell
 
 # Compiler
 CC = gcc
