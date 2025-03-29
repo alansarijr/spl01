@@ -1,88 +1,74 @@
-# SPL01
+# SPL01 - Linux Utilities
 
-## 📌 Introduction
-This repository is part of the SPL01 course and includes my own implementations of basic Linux utilities using C. These programs replicate the functionality of commonly used commands, providing insight into Linux system programming. The implemented commands include:
+Minimal implementations of essential Linux command-line utilities in C, developed as part of the SPL01 course.
 
-- **`mymv`** → Move/Rename files
-- **`mycp`** → Copy files
-- **`myecho`** → Print text to stdout
-- **`mypwd`** → Print working directory
+## Implemented Utilities
 
-Each program is compiled using `gcc` and follows a structured execution format.
+| Utility  | Functionality           | Source Code |
+|----------|-------------------------|-------------|
+| `mymv`   | Moves/Renames files      | [mymv.c](./mymv.c) |
+| `mycp`   | Copies files             | [mycp.c](./mycp.c) |
+| `myecho` | Prints arguments         | [myecho.c](./myecho.c) |
+| `mypwd`  | Displays current directory | [mypwd.c](./mypwd.c) |
 
----
+## Building & Running
 
-## 🔹 1. mymv (Move/Rename Files)
+### Prerequisites
+- GCC compiler
 
-### 📖 **Overview**
-The `mymv` command moves or renames a file from one location to another using the `rename()` system call.
+### Compilation with Makefile
+```bash
+# Clone repository
+git clone https://github.com/your-repo/spl01.git
+cd spl01
 
-### 🛠 **Compilation & Usage**
-```sh
-gcc -o mymv mymv.c
-./mymv <source_file> <destination_file>
+# Build all utilities
+make
+
+# Build a specific utility
+make mymv
+make mycp
+make myecho
+make mypwd
+
+# Clean compiled files
+make clean
 ```
 
-### ✅ **Expected Output**
-```sh
-File moved successfully!
-```
-If an error occurs (e.g., file not found), an appropriate error message is displayed.
+## Usage Guide
 
----
+### `mymv`
+```bash
+# Rename a file
+./mymv oldname.txt newname.txt
 
-## 🔹 2. mycp (Copy Files)
-
-### 📖 **Overview**
-The `mycp` command copies a file from a source to a destination using `open()`, `read()`, and `write()` system calls.
-
-### 🛠 **Compilation & Usage**
-```sh
-gcc -o mycp mycp.c
-./mycp source.txt destination.txt
+# Move file to a different directory
+./mymv file.txt ~/Documents/
 ```
 
-### ✅ **Expected Output**
-```sh
-File copied successfully!
-```
-If an error occurs (e.g., file not found), an appropriate error message is displayed.
+### `mycp`
+```bash
+# Copy a file in the same directory
+./mycp source.txt backup.txt
 
----
-
-## 🔹 3. myecho (Print Text to Standard Output)
-
-### 📖 **Overview**
-The `myecho` command prints the given input text to the standard output.
-
-### 🛠 **Compilation & Usage**
-```sh
-gcc -o myecho myecho.c
-./myecho Hello, World!
+# Copy to another directory
+./mycp image.jpg /var/www/uploads/
 ```
 
-### ✅ **Expected Output**
-```sh
-Hello, World!
+### `myecho`
+```bash
+# Print a message
+./myecho "Hello, World!"
+
+# Print multiple arguments
+./myecho "CPU Cores:" $(grep -c processor /proc/cpuinfo)
+
+# Print without newline
+./myecho -n "Loading..."
 ```
 
----
-
-## 🔹 4. mypwd (Print Working Directory)
-
-### 📖 **Overview**
-The `mypwd` command prints the current working directory using the `getcwd()` system call.
-
-### 🛠 **Compilation & Usage**
-```sh
-gcc -o mypwd mypwd.c
+### `mypwd`
+```bash
+# Show current directory
 ./mypwd
 ```
-
-### ✅ **Expected Output**
-```sh
-/home/user/project
-```
-
----
-
