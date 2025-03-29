@@ -15,13 +15,13 @@ int main(int argc, char* argv[]){
     int fd_src=open(argv[1], O_RDONLY);
     int fd_dst = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 644);
     if(fd_src < 0){
-        printf("Cannot open file !\n");
+        perror("Cannot open file !\n");
         exit(-2);
     }
     int num_read;
     while ((num_read = read(fd_src,buffer,COUNT)) > 0){
         if(write(fd_dst, buffer, num_read) < 0){
-            printf("error in coping !\n");
+            perror("error in coping !\n");
             exit(-3);
         }
     }
