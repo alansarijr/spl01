@@ -2,6 +2,13 @@
 *.o
 *.out
 *.class
+unix_utils/*.o
+unix_utils/*.out
+unix_utils/*.class
+
+femtoshell/*.o
+femtoshell/*.out
+femtoshell/*.class
 
 # Ignore logs and temporary files
 *.log
@@ -19,4 +26,5 @@ vendor/
 .DS_Store
 Thumbs.db
 .vscode/
+playground/
 

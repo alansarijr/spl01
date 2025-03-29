@@ -5,7 +5,7 @@
 #include <string.h>
 
 const char* shell_name = "mosh";
-#define MAX_SIZE 1024
+#define MAX_SIZE 1000000 
 
 int main(){
     char buffer[MAX_SIZE];
@@ -25,7 +25,7 @@ int main(){
             printf("Good Bye!\n");
             break;
         }else {
-            printf("Wrong Command !\n");
+            printf("Invalid command\n");
         }
     }
     return 0;
