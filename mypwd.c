@@ -14,11 +14,6 @@ int main(int argc, char ** argv) {
     if(getcwd(buffer, COUNT) == NULL){
         exit(-2);
     }
-    int i = 0;
-    while(buffer[i]){
-        i++;
-    }
-    write(1, buffer, i);
-    write(1, "\n", 1);
+    printf("%s\n", buffer);
     return 0;
 }

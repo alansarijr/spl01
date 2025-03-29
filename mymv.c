@@ -13,6 +13,7 @@ int main(int argc, char ** argv){
     }
     if(rename(argv[1], argv[2]) < 0) { 
         printf("Error !\n");
+        exit(-2);
     }
     return 0;
 }
