@@ -3,7 +3,7 @@
 #include <unistd.h> 
 #include <stdlib.h>
 
-#define COUNT 100
+#define COUNT 1024
 
 int main(int argc, char ** argv) {
     char buffer[COUNT];
@@ -11,9 +11,11 @@ int main(int argc, char ** argv) {
         printf("Usgae: %s", argv[0]);
         exit(-1);
     }
-    if(getcwd(buffer, COUNT) == NULL){
+    if(getcwd(buffer, COUNT) != NULL){
+        printf("%s\n", buffer);
+    }else {
+        perror("Error !\n");
         exit(-2);
     }
-    printf("%s\n", buffer);
     return 0;
 }
